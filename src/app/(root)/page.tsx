@@ -5,18 +5,19 @@ import New from './pages/new'
 
 const Page = () => {
   return (
-  <div className="relative w-full h-  overflow-hidden">
+  <div className=" ">
   {/* Paper texture */}
-  <div
+  {/* <div
     className="pointer-events-none absolute inset-0 z-50 opacity-30 "
     style={{
       backgroundImage: "url('/textures/tecture2.jpg')",
         //  backgroundSize: "cover",
     // backgroundPosition: "center",
     }}
-  />
+  /> */}
 
   {/* Content */}
+ 
     <Video />
   <div className="relative z-10">
     <Grid />

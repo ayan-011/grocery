@@ -5,6 +5,7 @@ import { useRef } from "react";
 
 export const Video = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+    const stickyRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -17,24 +18,29 @@ export const Video = () => {
     [20, 80]
   );
 
-  const clipPath = useTransform(
-    clipPathProgress,
-    (value) => `circle(${value}% at 50% 50%)`
-  );
+  // const clipPath = useTransform(
+  //   clipPathProgress,
+  //   (value) => `circle(${value}% at 50% 50%)`
+  // );
 
   return (
     <div
       ref={containerRef}
-      className="relative h-screen bg-[#e6e2d6] z-90"
+      className="relative h-[200vh] bg-[#e6e2d6]  "
     >
-      <div className="sticky top-0 w-screen h-screen overflow-hidden">
+      <div
+        ref={stickyRef}
+        className="top-0 sticky m-0 p-0 w-screen h-screen overflow-hidden"
+      >
+      <div className="relative z-auto inset-0 p-0 w-full h-full">
         <motion.div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            clipPath,
-            willChange: "clip-path",
-            transform: "translateZ(0)",
-          }}
+          className=" w-full h-full"
+         style={{
+              clipPath: useTransform(
+                clipPathProgress,
+                (value: number) => `circle(${value}% at 50% 50%)`
+              ),
+            }}
         >
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -51,6 +57,7 @@ export const Video = () => {
             }}
           />
         </motion.div>
+      </div>
       </div>
     </div>
   );
