@@ -1,28 +1,23 @@
 import React from 'react'
 import { Video } from './pages/Video'
 import Grid from './pages/Grid'
-import New from './pages/new'
+import New from './pages/new' 
+import Home from './pages/Home' 
+import {  Work } from './pages/projects/Parallaxvideos'
 
 const Page = () => {
   return (
   <div className=" ">
-  {/* Paper texture */}
-  {/* <div
-    className="pointer-events-none absolute inset-0 z-50 opacity-30 "
-    style={{
-      backgroundImage: "url('/textures/tecture2.jpg')",
-        //  backgroundSize: "cover",
-    // backgroundPosition: "center",
-    }}
-  /> */}
-
-  {/* Content */}
+  
  
-    <Video />
-  <div className="relative z-10">
-    <Grid />
+ 
+    <Home />  
+    <Video />  
+    <Grid /> 
+    <Work />  
     <New />
-  </div>
+
+
 </div>
   )
 }

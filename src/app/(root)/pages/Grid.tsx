@@ -28,15 +28,24 @@ export default function Grid() {
     <div
       style={{
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ["--paper" as any]: "#e6e2d6",
+        ["--paper" as any]: "#021008",
         ["--ink" as any]: "#26261f",
         ["--rust" as any]: "#9c5b3c",
         ["--pine" as any]: "#3b5d52",
         ["--dot" as any]: "#a89f8c",
         
+        
       }}
-      className="min-h-screen w-full flex flex-col"
+      className="min-h-screen w-full flex flex-col relative z-10"
     >
+       {/* <div
+    className="pointer-events-none absolute inset-0 z-50 opacity-5 "
+    style={{
+      backgroundImage: "url('/textures/tecture2.jpg')",
+        //  backgroundSize: "cover",
+    // backgroundPosition: "center",
+    }}
+  /> */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
@@ -110,27 +119,27 @@ export default function Grid() {
         }
       `}</style>
 
-      <div className="tig-root flex-1 flex flex-col">
-        <header className="px-6 pt-14 pb-10 md:px-12 border-b border-dashed" style={{ borderColor: "rgba(38,38,31,0.25)" }}>
+      <div className="tig-root flex-1 flex flex-col !text-white ">
+        <header className="px-6 pt-14 pb-10 md:px-12  " >
           <p className="tig-mono text-xs tracking-wide" style={{ color: "var(--pine)" }}>
              
           </p>
-          <h1 className="mt-3 text-4xl md:text-5xl" style={{ fontWeight: 500 }}>
+          <h1 className="mt-3 text-4xl md:text-5xl " style={{ fontWeight: 500 }}>
             Twelve terrains, surveyed
           </h1>
-          <p className="mt-3 max-w-md text-base md:text-[17px] leading-relaxed" style={{ color: "rgba(38,38,31,0.75)" }}>
+          <p className="mt-3 max-w-md text-base md:text-[17px] leading-relaxed !text-white" style={{ color: "rgba(38,38,31,0.75)" }}>
             Each entry holds a coordinate and a photograph. Rest a cursor
             on a name to bring the ground into view.
           </p>
         </header>
 
        
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+{/* border-[#999380] */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
           {SITES.map((site) => (
             <div
               key={site.no}
-              className="tig-cell"
+              className="tig-cell  !border-b-[1px] !border-t-[1px] border-dashed !border-[#d2f5513c]"
               tabIndex={0}
               role="button"
               aria-label={`Reveal photograph of ${site.name}`}
@@ -142,7 +151,7 @@ export default function Grid() {
                 }}
               />
               <div className="tig-label flex flex-col gap-1">
-                <span className="tig-mono tig-no text-xs" style={{ color: "var(--rust)" }}>
+                <span className="tig-mono tig-no text-xs text-[#d2f551]" >
                   {site.no}
                 </span>
                 <span className="text-2xl" style={{ fontWeight: 500 }}>
