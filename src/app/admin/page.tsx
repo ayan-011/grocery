@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { useItems } from "../../context/ItemsContext";
+ 
+import { Item, NewItemInput } from "@/lib/types"; 
 import ItemCard from "@/components/ItemCard";
 import AddItemModal from "@/components/AddItemModal";
-import { Item, NewItemInput } from "@/lib/types";
 
 export default function AdminPage() {
   const { items, addItem, deleteItem } = useItems();
@@ -52,7 +53,7 @@ export default function AdminPage() {
       </div>
 
       {showModal && (
-        <AddItemModal onClose={() => setShowModal(false)} onSave={handleSave} />
+        <AddItemModal  onClose={() => setShowModal(false)} onSave={handleSave} />
       )}
     </div>
   );

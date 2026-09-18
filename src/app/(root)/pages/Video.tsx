@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { div } from "framer-motion/client";
 import { useRef } from "react";
 import Videofooter from "./components/Videofooter";
+import { RxArrowTopRight } from "react-icons/rx";
 
 export const Video = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -84,11 +85,12 @@ export const Video = () => {
                   <div className="w- ">
 
 
-                    <button className="bg-[#d1f551] hover:bg-[#c9f725] py-4 px-20  rounded-full  text-lg  text-black">Shop Now</button>
+                    <button className="bg-[#d1f551] hover:bg-[#c9f725] py-4 px-10 rounded-full  text-lg  
+                                 text-black flex items-center gap-3  hover:scale-102  transition-transform duration-300">Shop Now <RxArrowTopRight /></button>
                   </div>
                 </div>
 
-                <div className="footer border-t-[1px] border-white/30 b-0 py-8 md:py-10 bg-">
+                <div className="footer border-t-[2px] border-black/20 b-0 py-8 md:py-8 bg-">
 
                 </div>
 

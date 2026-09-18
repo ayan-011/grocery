@@ -4,6 +4,7 @@ import { useItems } from "../../context/ItemsContext";
 import { useCart } from "../../context/CartContext";
 import ItemCard from "@/components/ItemCard";
 import Navbar from "@/components/Navbar";
+ 
 
 export default function ShopPage() {
   const { items } = useItems();
