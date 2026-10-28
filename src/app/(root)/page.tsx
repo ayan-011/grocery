@@ -14,7 +14,7 @@ const Page = () => {
   
  
  
-    <Home />  
+    {/* <Home />   */}
     <Video />  
     <Grid /> 
     <Work />  
